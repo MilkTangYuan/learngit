@@ -40,3 +40,16 @@ git cherry-pick <commit>
     git stash apply stash@{0}
     git stash drop
 
+
+
+
+查看远程库信息:
+git remote 
+git remote -v 显示更详细的信息
+
+
+从远程克隆分支到本地
+git clone  git@github.com:MilkTangYuan/learngit.git  
+默认情况下只能看到本地的master 
+如果想要在dev 分支上开发，就必须创建远程origin的dev分支到本地，于是他用这个命令创建本地dev分支
+git checkout -b dev origin/dev
