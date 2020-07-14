@@ -1,4 +1,4 @@
-Git is a distributed version control system.
+﻿Git is a distributed version control system.
 Git is a free software distributed under the GPL.
 Git has a mutable index called stage.
 Git tracks changes of files.
@@ -40,7 +40,18 @@ git cherry-pick <commit>
     git stash apply stash@{0}
     git stash drop
 
+小结
+查看远程库信息，使用git remote -v；
 
+本地新建的分支如果不推送到远程，对其他人就是不可见的；
+
+从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；
+
+在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；
+
+建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
+
+从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
 
 
 查看远程库信息:
@@ -53,7 +64,6 @@ git clone  git@github.com:MilkTangYuan/learngit.git
 默认情况下只能看到本地的master 
 如果想要在dev 分支上开发，就必须创建远程origin的dev分支到本地，于是他用这个命令创建本地dev分支
 git checkout -b dev origin/dev
-
 
 多人协作的工作模式通常是这样：
 
@@ -68,3 +78,4 @@ git checkout -b dev origin/dev
 5、如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream-to <branch-name> origin/<branch-name>。
 
 这就是多人协作的工作模式，一旦熟悉了，就非常简单。
+
